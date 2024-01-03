@@ -1,0 +1,5 @@
+[general]
+library_name = "libqrean"
+output_file_path = "./LibQREAN.jl"
+module_name = "LibQREAN"
+#export_symbol_prefixes = ["CX", "qrean_"]

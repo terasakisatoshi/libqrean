@@ -52,7 +52,7 @@ CFLAGS += -Wno-misleading-indentation
 #CFLAGS += -D NO_DEBUG
 CFLAGS += -D DEBUG_QRDATA
 
-all: size
+all: size libqrean.so
 
 libqrean.a: ${OBJS}
 	${AR} rcs libqrean.a $(OBJS)
@@ -63,8 +63,11 @@ size: libqrean.a
 .c.o:
 	$(CC) $(CFLAGS) -c $<
 
+libqrean.so: ${OBJS}
+	$(CC) -shared -o libqrean.so $(OBJS)
+
 clean:
-	rm -f *.o libqrean.a
+	rm -f *.o libqrean.*
 
 format:
 	clang-format -i *.[ch]

@@ -2,7 +2,7 @@
 
 all: src cli
 
-src: 
+src:
 	@make -C src
 
 cli: src
